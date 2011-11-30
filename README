@@ -1,1 +1,24 @@
 Welcome to Project LEO!
+Instructions for writing grammars:
+First, in a word doc or similar write your start symbol:
+For example:
+@ <- start symbol
+
+After every decleration, put an arrow and then what it is
+For example:
+
+number <- 0|1|2|3|4|5|6|7|8|9
+
+In the above example, I included the pipe( | ) or "or" sign.  Use this to represent something that could be one thing or another.
+
+Here is a complete example:
+
+equation <- start symbol
+
+equation <- number + number | number - number | number * number | number / number
+
+number <- 0|1|2|3|4|5|6|7|8|9
+
+Remeber all instructions MUST end in a terminal.
+Have fun! 
+Alan
