@@ -1,4 +1,6 @@
 Welcome to Project LEO!
+There are two parts to this document.  The first part is a simiplified way of doing it written by me.  The second part is from the reference site for our dragon book (http://dragonbook.stanford.edu/lecture-notes.html).
+While it is more complicated, you can do a lot more with the procedure in the second section.
 Instructions for writing grammars:
 First, in a word doc or similar write your start symbol:
 For example:
@@ -22,3 +24,71 @@ number <- 0|1|2|3|4|5|6|7|8|9
 Remeber all instructions MUST end in a terminal.
 Have fun! 
 Alan
+
+Part 2:
+Formal Grammars
+Handout written by Maggie Johnson and Julie Zelenski.
+What is a grammar?
+A grammar is a powerful tool for describing and analyzing languages. It is a set of rules
+by which valid sentences in a language are constructed. Here’s a trivial example of
+English grammar:
+sentence –> <subject> <verb-phrase> <object>
+subject –> This | Computers | I
+verb-phrase –> <adverb> <verb> | <verb>
+adverb –> never
+verb –> is | run | am | tell
+object –> the <noun> | a <noun> | <noun>
+noun –> university | world | cheese | lies
+
+Using the above rules or productions, we can derive simple sentences such as these:
+This is a university.
+Computers run the world.
+I am the cheese.
+I never tell lies.
+
+In addition to several reasonable sentences, we can also derive nonsense like "Computers
+run cheese" and "This am a lies". These sentences don't make semantic sense, but they
+are syntactically correct because they are of the sequence of subject, verb-phrase, and
+object. Formal grammars are a tool for syntax, not semantics. We worry about
+semantics at a later point in the compiling process. In the syntax analysis phase, we
+verify structure, not meaning.
+
+Vocabulary
+
+We need to review some definitions before we can proceed:
+grammar: a set of rules by which valid sentences in a language are constructed.
+
+nonterminal: a grammar symbol that can be replaced/expanded to a sequence of
+           symbols.
+terminal: an actual word in a language; these are the symbols in a grammar that
+        cannot be replaced by anything else. "terminal" is supposed to conjure
+       up the idea that it is a dead-end—no further expansion is possible.
+production: a grammar rule that describes how to replace/exchange symbols. The
+          general form of a production for a nonterminal is:
+X –>Y1Y2Y3...Yn
+The nonterminal X is declared equivalent to the concatenation of the
+symbols Y1Y2Y3...Yn. The production means that anywhere where we
+encounter X, we may replace it by the string Y1Y2Y3...Yn. Eventually we
+will have a string containing nothing that can be expanded further, i.e., it
+will consist of only terminals. Such a string is called a sentence. In the
+context of programming languages, a sentence is a syntactically correct
+and complete program.
+derivation: a sequence of applications of the rules of a grammar that produces a
+          finished string of terminals. A leftmost derivation is where we always
+         substitute for the leftmost nonterminal as we apply the rules (we can
+        similarly define a rightmost derivation). A derivation is also called a
+       parse.
+start symbol: a grammar has a single nonterminal (the start symbol) from which all
+            sentences derive:
+S –> X1X2X3...Xn
+All sentences are derived from S by successive replacement using the
+productions of the grammar.
+null symbol: ε, it is sometimes useful to specify that a symbol can be replaced by
+              nothing at all. To indicate this, we use the null symbol ε, e.g., A –> B | ε.
+
+
+
+Productions are often defined in terms of themselves. For example a list of variables in a
+programming language grammar could be specified by this production:
+variable_list –> variable | variable_list , variable
+Such productions are said to be recursive.
