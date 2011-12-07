@@ -92,3 +92,17 @@ Productions are often defined in terms of themselves. For example a list of vari
 programming language grammar could be specified by this production:
 variable_list –> variable | variable_list , variable
 Such productions are said to be recursive.
+
+Mark: tts
+art
+OOP
+AI & drivers
+
+Sub packages:
+drivers
+-- art - Morgan
+-- sound - Mark
+-- network - Alan
+Ai - Alan
+Crypto - Nathan
+core - all
