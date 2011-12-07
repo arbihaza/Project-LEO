@@ -100,9 +100,11 @@ AI & drivers
 
 Sub packages:
 drivers
--- art - Morgan
+-- art - Morgan,David
 -- sound - Mark
 -- network - Alan
 Ai - Alan
 Crypto - Nathan
 core - all
+Go here for the interfacing guide: 
+http://www.intel.com/content/www/us/en/architecture-and-technology/64-ia-32-architectures-software-developer-manual-325462-rmver.html
