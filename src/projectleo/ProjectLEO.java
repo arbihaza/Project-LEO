@@ -1,4 +1,3 @@
-package projectleo;
 
 /**
  * Project LEO is a compiler designed for academic use.
@@ -15,5 +14,8 @@ public class ProjectLEO {
         Core.intro();
         Core.tutorial();
         Core.setup();
+        Lexer lex = new Lexer();
+        lex.codecheck();
     }
 }
+
